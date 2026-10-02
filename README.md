@@ -36,9 +36,10 @@ Double-click **`Start_EVO2UE.bat`**. It needs Python 3.9+ from python.org with
   Execution**. The app shows "Connected: <project>" within a few seconds. Click **Send to
   Unreal** and follow progress in the app's log. The import runs inside Unreal, so keep the
   editor open.
-* **No editor open:** click **Launch project…** and pick your `.uproject`. The app starts the
-  right Unreal version and runs the import when it has loaded. The project needs the Python
-  plugin enabled, but Remote Execution isn't needed for this.
+* **No editor open:** click **Launch project…** and pick your `.uproject`. The app turns on
+  Remote Execution in that project's `Config/DefaultEngine.ini` (it adds two lines and
+  changes nothing else). It then opens Unreal normally, waits for it to load, and sends the
+  import. Unreal stays open afterwards.
 * **Build in a new level** creates `/Game/EVO/<track>/L_<track>` with a sun, sky and fog.
   Turn it off to build into whatever level is open.
 * If Windows Firewall asks about Unreal or Python, allow access. Everything stays on this PC
